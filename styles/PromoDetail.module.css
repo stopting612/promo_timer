@@ -1,0 +1,44 @@
+.promoDetailContainer {
+        margin-top: 28px;
+    padding: 18px 12px;
+    border-top: 1px solid rgba(255, 255, 255, 0.8);
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    align-items: center;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.promoDetailBox {
+        display: block;
+}
+
+.promoNum {
+        color: rgb(255, 255, 255);
+        font-weight: bold;
+        font-size: 24px;
+        margin-left: 4px;
+        margin-right: 2px;
+}
+
+.promoNumOf {
+        margin-left: 1px;
+        margin-right: 3px
+}
+
+.promoTotalNum {
+        color: rgb(255, 255, 255);
+    font-weight: bold;
+    font-size: 24px;
+    margin-left: 1px;
+    margin-right: 2px;
+
+}
+
+.promoDetailBox div {
+        margin: 0px 8px;
+    display: inline-block;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 34px;
+}

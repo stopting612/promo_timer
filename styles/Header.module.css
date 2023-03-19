@@ -1,0 +1,56 @@
+.icon_button {
+        display: flex;
+        -webkit-box-align: center;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        border-radius: 4px;
+        cursor: pointer;
+        opacity: 0.9;
+        background: none rgba(255, 255, 255, 0.2);
+        box-shadow: none;
+        margin-left: 10px;
+        font-size: 13px;
+        border: none;
+        color: white !important;
+        padding: 8px 12px;
+        min-width: 70px;
+
+}
+.button_title {
+        display: block;
+        margin-left: 4px;
+}
+.menu_inner_box {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        margin: 10px 0 10px;
+        
+}
+
+.logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: bold;
+}
+
+.icon_menu {
+        display: flex;
+}
+
+
+
+@media only screen and (max-width: 576px){
+       .icon_button {
+        padding: 8px;
+        min-width: auto;
+       }
+
+       .button_title {
+        display: none;
+       }
+
+
+}
