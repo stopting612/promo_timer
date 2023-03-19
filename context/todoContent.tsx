@@ -4,24 +4,13 @@ import React, { createContext } from 'react';
 
 export interface Todo {
         
-        id: number,
-        todoTitle: string,
-        cycle: number
-        complete: boolean
-        default: boolean
-        count: number
-}
-
-export interface TodoAction {
-        
         id?: number,
         todoTitle: string,
-        cycle: number
+        cycle?: number
         complete?: boolean
         default?: boolean
         count?: number
 }
-
 
 
 export interface StateType {
@@ -33,14 +22,14 @@ export const initState: any = {
         todoLists: []
 };
 export type Action = 
-| { type: 'ADD', payload: TodoAction  }
-| { type: 'DELETE', payload: TodoAction }
-| { type: 'UPDATE', payload: TodoAction }
-| { type: 'TOGGLE', payload: TodoAction }
-| { type: 'TOGGLE_DEFAULT', payload: TodoAction }
-| { type: 'ADD_COUNT', payload: TodoAction }
+| { type: 'ADD', payload: Todo  }
+| { type: 'DELETE', payload: Todo }
+| { type: 'UPDATE', payload: Todo }
+| { type: 'TOGGLE', payload: Todo }
+| { type: 'TOGGLE_DEFAULT', payload: Todo }
+| { type: 'ADD_COUNT', payload: Todo }
 
-function addTask (todo: TodoAction){
+function addTask (todo: Todo){
         return {
           id: Math.floor(Math.random() * 1000),
           todoTitle: todo.todoTitle,
@@ -122,7 +111,7 @@ export function todoReducer(state: StateType, action: Action){
                 case 'ADD_COUNT':
                 return {
                         todoLists: todoLists.map((todo) => {
-                                if(todo.id === id){
+                                if(todo.id === id && todo.count != undefined){
                                         return {
                                                 ...todo,
                                                 count: todo.count + 1

@@ -1,7 +1,7 @@
 import styles from "@/styles/AddTaskForm.module.css";
 import { useForm, SubmitHandler } from "react-hook-form";
 import TodoContext from "@/context/todoContent";
-import { useContext } from "react";
+import { MouseEventHandler, useContext, MouseEvent } from "react";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 
@@ -51,7 +51,7 @@ export default function EditTaskForm({ handleClick, todo}: any) {
         handleClick();
   };
 
-  const handleDelete = (data: FormValues, event: any) =>{
+  const handleDelete = (data: FormValues) =>{
         const deleteTodo = {
                 id: todo.id,
                 todoTitle: data.todoTitle,
@@ -80,7 +80,7 @@ export default function EditTaskForm({ handleClick, todo}: any) {
                   placeholder="What are you working on?"
                   className={styles.title_input}
                 ></input>
-                <p className={styles.errorMsg}>{errors.todoTitle?.message}</p>
+                <p className={styles.errorMsg}></p>
               </div>
             </div>
           </div>
@@ -106,9 +106,9 @@ export default function EditTaskForm({ handleClick, todo}: any) {
             className={styles.inputEST}
           ></input>
           
-          <p className={styles.errorMsg}>{errors.cycle?.message}</p>
+          <p className={styles.errorMsg}></p>
           <div className={styles.actionContainer}>
-            <button className={styles.actionBtn} onClick={handleDelete}>Delete</button>
+            <button className={styles.actionBtn} onClick={()=> handleDelete(todo)}>Delete</button>
             <div className={styles.submitContainer}>
               <button
                 title="Escape key"
