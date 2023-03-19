@@ -145,7 +145,7 @@ export default function Counter() {
       }
 
       tick();
-    }, 1);
+    }, 1000);
     return () => clearInterval(interval);
 
     
